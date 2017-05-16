@@ -1,0 +1,28 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:id="@+id/add_my_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="Add my goal"
+        android:visibility="gone" />
+
+    <com.kbrtz.mydailygoals.component.RecyclerViewEmptySupport
+        android:id="@+id/goals_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/no_goals_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="You have no goals yet. \nPress EDIT to create your list. " />
+
+</LinearLayout>

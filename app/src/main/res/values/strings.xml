@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">MyDailyGoals</string>
+    <string name="facebook_app_id">236926540121553</string>
+    <string name="fb_login_protocol_scheme">fb236926540121553</string>
+    <string name="action_edit">edit_mode</string>
+
+
+    //rewards
+    <string name="reward_1">Beginner</string>
+    <string name="reward_description_1">You are a Beginner</string>
+    <string name="reward_2">Advanced</string>
+    <string name="reward_description_2">You are a Advanced</string>
+    <string name="reward_3">Pro</string>
+    <string name="reward_description_3">You are a Pro</string>
+    <string name="reward_4">Master</string>
+    <string name="reward_description_4">You are a Master</string>
+    <string name="reward_5">God</string>
+    <string name="reward_description_5">You are a God</string>
+
+
+    //pre-loaded goals
+    <string name="name_1">Talk with a positive person</string>
+    <string name="description_1">Talk with a positive person</string>
+    <string name="name_2">Write down three good things that happened to you each day.</string>
+    <string name="description_2">Write down three good things that happened to you each day.</string>
+    <string name="name_3">Laugh – even if you have to force it. The mere action of laughing releases endorphins.</string>
+    <string name="description_3">Laugh – even if you have to force it. The mere action of laughing releases endorphins.</string>
+    <string name="name_4">Get some sun (or a happy light, if it’s a gray day.)</string>
+    <string name="description_4">Get some sun (or a happy light, if it’s a gray day.)</string>
+    <string name="name_5">Move your body (walk, exercise) for 20 minutes or longer.</string>
+    <string name="description_5">Move your body (walk, exercise) for 20 minutes or longer.</string>
+    <string name="name_6">Walk a dog or pet an animal</string>
+    <string name="description_6">Walk a dog or pet an animal</string>
+    <string name="name_7">Ask for a hug from one person a day.</string>
+    <string name="description_7">Ask for a hug from one person a day.</string>
+    <string name="name_8">Call an old friend or relative.</string>
+    <string name="description_8">Call an old friend or relative.</string>
+    <string name="name_9">Invest 30 minutes a day doing a hobby you enjoy and find relaxing.</string>
+    <string name="description_9">Invest 30 minutes a day doing a hobby you enjoy and find relaxing.</string>
+    <string name="name_10">Buy something new (even something small, like a new type of coffee.)</string>
+    <string name="description_10">Buy something new (even something small, like a new type of coffee.)</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="goals_difficulty">
+        <item>Easy</item>
+        <item>Moderate</item>
+        <item>Hard</item>
+        <item>Very hard</item>
+    </string-array>
+
+
+</resources>
