@@ -20,7 +20,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import presenter.PresenterMainActivity;
+import com.kbrtz.mydailygoals.presenter.PresenterMainActivity;
 
 /**
  * Created by kamilabrito on 5/7/17.

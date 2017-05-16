@@ -17,7 +17,7 @@ import com.kbrtz.mydailygoals.util.DifficultyLevelUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import presenter.PresenterAddMyGoalActivity;
+import com.kbrtz.mydailygoals.presenter.PresenterAddMyGoalActivity;
 
 /**
  * Created by kamilabrito on 5/8/17.

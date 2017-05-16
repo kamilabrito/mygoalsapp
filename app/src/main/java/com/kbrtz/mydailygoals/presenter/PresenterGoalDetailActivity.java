@@ -1,4 +1,4 @@
-package presenter;
+package com.kbrtz.mydailygoals.presenter;
 
 import com.kbrtz.mydailygoals.dao.DataBaseDAO;
 import com.kbrtz.mydailygoals.interfaces.InterfaceGoalDetailActivity;

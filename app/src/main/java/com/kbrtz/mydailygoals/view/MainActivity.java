@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import presenter.PresenterMainActivity;
+import com.kbrtz.mydailygoals.presenter.PresenterMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 

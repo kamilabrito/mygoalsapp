@@ -1,4 +1,4 @@
-package presenter;
+package com.kbrtz.mydailygoals.presenter;
 
 import android.content.Context;
 import android.content.SharedPreferences;

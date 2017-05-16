@@ -11,7 +11,7 @@ import com.kbrtz.mydailygoals.model.MyGoals;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import presenter.PresenterGoalDetailActivity;
+import com.kbrtz.mydailygoals.presenter.PresenterGoalDetailActivity;
 
 public class ActivityGoalDetails extends AppCompatActivity implements View.OnClickListener {
 

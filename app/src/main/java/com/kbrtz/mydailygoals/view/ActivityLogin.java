@@ -27,7 +27,7 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import presenter.PresenterLoginActivity;
+import com.kbrtz.mydailygoals.presenter.PresenterLoginActivity;
 
 /**
  * Created by kamilabrito on 5/10/17.
