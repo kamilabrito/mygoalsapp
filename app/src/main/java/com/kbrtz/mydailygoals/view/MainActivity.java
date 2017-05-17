@@ -26,6 +26,8 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
+
 import com.kbrtz.mydailygoals.presenter.PresenterMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView userNameTv = (TextView) header.findViewById(R.id.user_name_tv);
         TextView userLevelTv = (TextView) header.findViewById(R.id.user_level_tv);
         TextView userPointsTv = (TextView) header.findViewById(R.id.user_points_tv);
-        ImageView userPhotoIv = (ImageView) header.findViewById(R.id.user_photo_iv);
+        CircleImageView userPhotoIv = (CircleImageView) header.findViewById(R.id.user_photo_iv);
 
         userNameTv.setText(currentUser.getName());
         userPointsTv.setText(currentUser.getPoints() + "");
