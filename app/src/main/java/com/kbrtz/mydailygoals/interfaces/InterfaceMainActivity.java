@@ -1,6 +1,7 @@
 package com.kbrtz.mydailygoals.interfaces;
 
 import com.kbrtz.mydailygoals.model.MyGoals;
+import com.kbrtz.mydailygoals.model.User;
 
 import java.util.List;
 
@@ -25,4 +26,8 @@ public interface InterfaceMainActivity {
     void openAddMyGoalActivity();
 
     void hideEditMode();
+
+    void countUserPoint(int goalValue);
+
+    User getCurrentUser();
 }

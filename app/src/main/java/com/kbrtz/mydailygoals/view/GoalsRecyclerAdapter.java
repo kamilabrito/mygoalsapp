@@ -59,6 +59,7 @@ class GoalsRecyclerAdapter extends RecyclerView.Adapter<GoalsRecyclerAdapter.Vie
                 @Override
                 public void onClick(View v) {
                     presenterMainActivity.markGoalAsDone(currentGoal);
+                    presenterMainActivity.countUserPoint(currentGoal.getGoalValue());
                     removeAt(position);
                 }
             });

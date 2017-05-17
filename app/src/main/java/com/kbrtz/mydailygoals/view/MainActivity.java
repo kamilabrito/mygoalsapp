@@ -14,7 +14,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kbrtz.mydailygoals.R;
@@ -22,14 +21,13 @@ import com.kbrtz.mydailygoals.component.RecyclerViewEmptySupport;
 import com.kbrtz.mydailygoals.interfaces.OnItemClickListener;
 import com.kbrtz.mydailygoals.model.MyGoals;
 import com.kbrtz.mydailygoals.model.User;
+import com.kbrtz.mydailygoals.presenter.PresenterMainActivity;
 import com.kbrtz.mydailygoals.util.GoalsUtil;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import com.kbrtz.mydailygoals.presenter.PresenterMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
@@ -73,30 +71,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View header = navigationView.getHeaderView(0);
         TextView userNameTv = (TextView) header.findViewById(R.id.user_name_tv);
-        TextView userLevelTv = (TextView) header.findViewById(R.id.user_level_tv);
-        TextView userPointsTv = (TextView) header.findViewById(R.id.user_points_tv);
+        final TextView userLevelTv = (TextView) header.findViewById(R.id.user_level_tv);
+        final TextView userPointsTv = (TextView) header.findViewById(R.id.user_points_tv);
         CircleImageView userPhotoIv = (CircleImageView) header.findViewById(R.id.user_photo_iv);
-
         userNameTv.setText(currentUser.getName());
-        userPointsTv.setText(currentUser.getPoints() + " " + getResources().getString(R.string.points));
-        userLevelTv.setText(getResources().getString(GoalsUtil.checkUserLevel(currentUser.getPoints())));
         Picasso.with(this)
                 .load(currentUser.getPicture())
                 .resize(80, 80)
                 .centerCrop()
                 .into(userPhotoIv);
 
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle.syncState();
+
+        DrawerLayout.DrawerListener listener = new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                User user = presenter.getCurrentUser();
+                userPointsTv.setText(user.getPoints() + " " + getResources().getString(R.string.points));
+                userLevelTv.setText(getResources().getString(GoalsUtil.checkUserLevel(user.getPoints())));
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        };
+
+        drawer.addDrawerListener(listener);
+
     }
+
+
 
     public void openDetailActivity(MyGoals item) {
         Intent i = new Intent();
@@ -204,5 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         goalsRecyclerView.setEmptyView(noGoalsTv);
         goalsListAdapter.notifyDataSetChanged();
     }
+
+
 
 }

@@ -6,6 +6,7 @@ import com.kbrtz.mydailygoals.constants.Constants;
 import com.kbrtz.mydailygoals.dao.DataBaseDAO;
 import com.kbrtz.mydailygoals.interfaces.InterfaceMainActivity;
 import com.kbrtz.mydailygoals.model.MyGoals;
+import com.kbrtz.mydailygoals.model.User;
 import com.kbrtz.mydailygoals.view.MainActivity;
 
 import java.util.List;
@@ -70,6 +71,16 @@ public class PresenterMainActivity implements InterfaceMainActivity {
     @Override
     public void hideEditMode() {
         view.hideEditMode();
+    }
+
+    @Override
+    public void countUserPoint(int goalValue) {
+        createGoalsDAO.countUserPoint(goalValue);
+    }
+
+    @Override
+    public User getCurrentUser() {
+        return createGoalsDAO.getCurrentUser();
     }
 
     public void editModeIsShowing(boolean b) {

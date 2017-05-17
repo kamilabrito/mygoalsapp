@@ -90,4 +90,12 @@ public class DataBaseDAO {
         updateGoal.setGoalStatus(Constants.STATUS_REMOVED);
         updateGoal.save();
     }
+
+    public void countUserPoint(int goalValue) {
+        User user = getCurrentUser();
+        int userPoints = user.getPoints();
+        int updatedPoints = userPoints + goalValue;
+        user.setPoints(updatedPoints);
+        user.save();
+    }
 }
