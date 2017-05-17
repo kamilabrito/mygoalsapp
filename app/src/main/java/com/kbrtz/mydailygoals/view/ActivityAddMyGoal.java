@@ -3,6 +3,7 @@ package com.kbrtz.mydailygoals.view;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,6 +34,8 @@ public class ActivityAddMyGoal extends AppCompatActivity implements View.OnClick
     Button addMyGoalBtn;
     @BindView(R.id.difficulty_spinner)
     Spinner difficultySpn;
+    @BindView(R.id.toolbar_add_goal)
+    Toolbar toolbar;
 
     private String goalName, goalDescription, difficultyLevel = "";
     private PresenterAddMyGoalActivity presenter;
@@ -40,10 +43,13 @@ public class ActivityAddMyGoal extends AppCompatActivity implements View.OnClick
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_my_goal_activity);
+        setContentView(R.layout.app_bar_add_goal);
         ButterKnife.bind(this);
 
         presenter = new PresenterAddMyGoalActivity(this);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.goals_difficulty, android.R.layout.simple_spinner_item);
