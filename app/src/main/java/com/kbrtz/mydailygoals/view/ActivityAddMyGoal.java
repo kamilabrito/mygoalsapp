@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.kbrtz.mydailygoals.R;
 import com.kbrtz.mydailygoals.constants.Constants;
 import com.kbrtz.mydailygoals.model.MyGoals;
-import com.kbrtz.mydailygoals.util.DifficultyLevelUtil;
+import com.kbrtz.mydailygoals.util.GoalsUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,7 +67,7 @@ public class ActivityAddMyGoal extends AppCompatActivity implements View.OnClick
                     goal.setGoalName(goalName);
                     goal.setGoalDescription(goalDescription);
                     goal.setGoalStatus(Constants.STATUS_DONE);
-                    goal.setGoalValue(DifficultyLevelUtil.checkDifficultiLevel(this, difficultyLevel));
+                    goal.setGoalValue(GoalsUtil.checkDifficultiLevel(this, difficultyLevel));
                     goal.setGoalType(1);
 
                     presenter.addMyGoalToList(goal);

@@ -22,6 +22,7 @@ import com.kbrtz.mydailygoals.component.RecyclerViewEmptySupport;
 import com.kbrtz.mydailygoals.interfaces.OnItemClickListener;
 import com.kbrtz.mydailygoals.model.MyGoals;
 import com.kbrtz.mydailygoals.model.User;
+import com.kbrtz.mydailygoals.util.GoalsUtil;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -87,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         CircleImageView userPhotoIv = (CircleImageView) header.findViewById(R.id.user_photo_iv);
 
         userNameTv.setText(currentUser.getName());
-        userPointsTv.setText(currentUser.getPoints() + "");
-        // TODO userLevelTv.setText(getUserLevel(currentUser.getPoints));
+        userPointsTv.setText(currentUser.getPoints() + " " + getResources().getString(R.string.points));
+        userLevelTv.setText(getResources().getString(GoalsUtil.checkUserLevel(currentUser.getPoints())));
         Picasso.with(this)
                 .load(currentUser.getPicture())
                 .resize(80, 80)

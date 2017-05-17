@@ -10,7 +10,7 @@ import com.kbrtz.mydailygoals.constants.Constants;
  * Created by kamilabrito on 5/8/17.
  */
 
-public final class DifficultyLevelUtil {
+public final class GoalsUtil {
 
 
     public static int checkDifficultiLevel (Context context, String level) {
@@ -26,6 +26,24 @@ public final class DifficultyLevelUtil {
         } else {
             return Constants.DIFFICULTY_VERY_HARD;
         }
+
+    }
+
+    public static int checkUserLevel(int points) {
+
+        if (points < 100) {
+            return R.string.reward_1;
+        } else if (points >= 100 && points < 500) {
+            return R.string.reward_2;
+        } else if (points >= 500 && points < 5000) {
+            return R.string.reward_3;
+        } else if (points >= 5000 && points < 100000) {
+            return R.string.reward_4;
+        } else if (points >= 100000) {
+            return R.string.reward_5;
+        }
+        
+        return 1;
 
     }
 }

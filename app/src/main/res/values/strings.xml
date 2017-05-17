@@ -50,5 +50,9 @@
         <item>Very hard</item>
     </string-array>
 
+    //general text
+    <string name="points">Points</string>
+
+
 
 </resources>

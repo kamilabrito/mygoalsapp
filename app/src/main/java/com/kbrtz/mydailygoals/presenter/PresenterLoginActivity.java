@@ -68,7 +68,6 @@ public class PresenterLoginActivity implements InterfaceLoginActivity {
 
     @Override
     public void loadDataFirstBoot(Context context) {
-        createGoalsDAO.createRewards(context);
         createGoalsDAO.createGoals(context);
     }
 
