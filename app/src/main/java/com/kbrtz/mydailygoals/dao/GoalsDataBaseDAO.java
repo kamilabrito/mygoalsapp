@@ -19,9 +19,9 @@ import java.util.List;
  *
  */
 
-public class DataBaseDAO {
+public class GoalsDataBaseDAO {
 
-    public void createRewards(Context context) {
+   /* public void createRewards(Context context) {
         List<RewardsEnum> rewardsList = Arrays.asList(RewardsEnum.values());
 
         for (RewardsEnum r: rewardsList) {
@@ -29,7 +29,7 @@ public class DataBaseDAO {
                     context.getResources().getString(r.getDescription()), r.getType());
             reward.save();
         }
-    }
+    }*/
 
     public void createGoals(Context context) {
         List<LoadedGoalsEnum> preLoadedGoalsList = Arrays.asList(LoadedGoalsEnum.values());
@@ -44,9 +44,6 @@ public class DataBaseDAO {
         }
     }
 
-    public void createUser(User user) {
-        user.save();
-    }
 
     public List<MyGoals> getGoalsList() {
         List<MyGoals> goals = MyGoals.listAll(MyGoals.class);
@@ -56,12 +53,6 @@ public class DataBaseDAO {
     public List<MyGoals> getUnusedGoals() {
         List<MyGoals> goals = MyGoals.findWithQuery(MyGoals.class, "Select * from MY_GOALS where GOAL_STATUS != ?", "1");
         return goals;
-    }
-
-    public User getCurrentUser() {
-        List<User> user = User.listAll(User.class);
-        User currentUser = user.get(0);
-        return currentUser;
     }
 
     public List<MyGoals> getMyGoalsList() {
@@ -91,11 +82,4 @@ public class DataBaseDAO {
         updateGoal.save();
     }
 
-    public void countUserPoint(int goalValue) {
-        User user = getCurrentUser();
-        int userPoints = user.getPoints();
-        int updatedPoints = userPoints + goalValue;
-        user.setPoints(updatedPoints);
-        user.save();
-    }
 }

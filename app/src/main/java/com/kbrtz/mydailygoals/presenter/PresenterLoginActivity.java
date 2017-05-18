@@ -5,7 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.kbrtz.mydailygoals.constants.Constants;
-import com.kbrtz.mydailygoals.dao.DataBaseDAO;
+import com.kbrtz.mydailygoals.dao.GoalsDataBaseDAO;
+import com.kbrtz.mydailygoals.dao.UserDataBaseDAO;
 import com.kbrtz.mydailygoals.interfaces.InterfaceLoginActivity;
 import com.kbrtz.mydailygoals.model.User;
 import com.kbrtz.mydailygoals.view.ActivityLogin;
@@ -19,7 +20,8 @@ import static android.content.Context.MODE_PRIVATE;
 public class PresenterLoginActivity implements InterfaceLoginActivity {
 
     ActivityLogin view;
-    DataBaseDAO createGoalsDAO = new DataBaseDAO();
+    GoalsDataBaseDAO goalsDAO = new GoalsDataBaseDAO();
+    UserDataBaseDAO userDAO = new UserDataBaseDAO();
 
     public PresenterLoginActivity(ActivityLogin view) {
         this.view = view;
@@ -37,7 +39,7 @@ public class PresenterLoginActivity implements InterfaceLoginActivity {
         newUser.setPoints(0);
 
         //saving user on database
-        createGoalsDAO.createUser(newUser);
+        userDAO.createUser(newUser);
 
         return newUser;
     }
@@ -68,12 +70,12 @@ public class PresenterLoginActivity implements InterfaceLoginActivity {
 
     @Override
     public void loadDataFirstBoot(Context context) {
-        createGoalsDAO.createGoals(context);
+        goalsDAO.createGoals(context);
     }
 
     @Override
     public User getCurrentUser() {
-        return createGoalsDAO.getCurrentUser();
+        return userDAO.getCurrentUser();
     }
 
 

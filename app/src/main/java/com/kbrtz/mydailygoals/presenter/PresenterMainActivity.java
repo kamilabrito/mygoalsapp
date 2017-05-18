@@ -3,7 +3,8 @@ package com.kbrtz.mydailygoals.presenter;
 import android.content.Context;
 
 import com.kbrtz.mydailygoals.constants.Constants;
-import com.kbrtz.mydailygoals.dao.DataBaseDAO;
+import com.kbrtz.mydailygoals.dao.GoalsDataBaseDAO;
+import com.kbrtz.mydailygoals.dao.UserDataBaseDAO;
 import com.kbrtz.mydailygoals.interfaces.InterfaceMainActivity;
 import com.kbrtz.mydailygoals.model.MyGoals;
 import com.kbrtz.mydailygoals.model.User;
@@ -19,7 +20,8 @@ public class PresenterMainActivity implements InterfaceMainActivity {
 
     private MainActivity view;
     private Context context;
-    DataBaseDAO createGoalsDAO = new DataBaseDAO();
+    GoalsDataBaseDAO goalsDAO = new GoalsDataBaseDAO();
+    UserDataBaseDAO userDAO = new UserDataBaseDAO();
     private boolean editModeIsShowing;
 
     public PresenterMainActivity(MainActivity view) {
@@ -38,12 +40,12 @@ public class PresenterMainActivity implements InterfaceMainActivity {
 
     @Override
     public List<MyGoals> getUserGoalsList() {
-        return createGoalsDAO.getMyGoalsList();
+        return goalsDAO.getMyGoalsList();
     }
 
     @Override
     public void markGoalAsDone(MyGoals currentGoal) {
-        createGoalsDAO.markGoalAsDone(currentGoal);
+        goalsDAO.markGoalAsDone(currentGoal);
     }
 
     @Override
@@ -54,13 +56,13 @@ public class PresenterMainActivity implements InterfaceMainActivity {
     @Override
     public void addGoalToUserList(MyGoals currentGoal) {
         currentGoal.setGoalStatus(Constants.STATUS_IN_PROGRESS);
-        createGoalsDAO.addGoalToUserList(currentGoal);
+        goalsDAO.addGoalToUserList(currentGoal);
 
     }
 
     @Override
     public List<MyGoals> loadUnusedGoals() {
-        return createGoalsDAO.getUnusedGoals();
+        return goalsDAO.getUnusedGoals();
     }
 
     @Override
@@ -75,12 +77,12 @@ public class PresenterMainActivity implements InterfaceMainActivity {
 
     @Override
     public void countUserPoint(int goalValue) {
-        createGoalsDAO.countUserPoint(goalValue);
+        userDAO.countUserPoint(goalValue);
     }
 
     @Override
     public User getCurrentUser() {
-        return createGoalsDAO.getCurrentUser();
+        return userDAO.getCurrentUser();
     }
 
     public void editModeIsShowing(boolean b) {

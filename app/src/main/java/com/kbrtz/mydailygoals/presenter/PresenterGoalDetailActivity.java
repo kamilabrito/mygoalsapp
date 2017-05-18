@@ -1,6 +1,6 @@
 package com.kbrtz.mydailygoals.presenter;
 
-import com.kbrtz.mydailygoals.dao.DataBaseDAO;
+import com.kbrtz.mydailygoals.dao.GoalsDataBaseDAO;
 import com.kbrtz.mydailygoals.interfaces.InterfaceGoalDetailActivity;
 import com.kbrtz.mydailygoals.model.MyGoals;
 
@@ -10,10 +10,10 @@ import com.kbrtz.mydailygoals.model.MyGoals;
 
 public class PresenterGoalDetailActivity implements InterfaceGoalDetailActivity {
 
-    private DataBaseDAO createGoalsDAO = new DataBaseDAO();
+    private GoalsDataBaseDAO goalsDAO = new GoalsDataBaseDAO();
 
     @Override
     public void removeGoalFromUserList(MyGoals goal) {
-        createGoalsDAO.removeGoalFromUserList(goal);
+        goalsDAO.removeGoalFromUserList(goal);
     }
 }

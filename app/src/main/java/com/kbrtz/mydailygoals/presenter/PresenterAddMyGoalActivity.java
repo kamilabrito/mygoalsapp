@@ -1,6 +1,6 @@
 package com.kbrtz.mydailygoals.presenter;
 
-import com.kbrtz.mydailygoals.dao.DataBaseDAO;
+import com.kbrtz.mydailygoals.dao.GoalsDataBaseDAO;
 import com.kbrtz.mydailygoals.interfaces.InterfaceAddMyGoalActivity;
 import com.kbrtz.mydailygoals.model.MyGoals;
 import com.kbrtz.mydailygoals.view.ActivityAddMyGoal;
@@ -11,15 +11,15 @@ import com.kbrtz.mydailygoals.view.ActivityAddMyGoal;
 
 public class PresenterAddMyGoalActivity implements InterfaceAddMyGoalActivity {
 
-    ActivityAddMyGoal view;
-    DataBaseDAO createGoalsDAO = new DataBaseDAO();
+    ActivityAddMyGoal activityAddMyGoalview;
+    GoalsDataBaseDAO goalsDAO = new GoalsDataBaseDAO();
 
     public PresenterAddMyGoalActivity(ActivityAddMyGoal view) {
-        this.view = view;
+        this.activityAddMyGoalview = view;
     }
 
     @Override
     public void addMyGoalToList(MyGoals goal) {
-        createGoalsDAO.addGoalManually(goal);
+        goalsDAO.addGoalManually(goal);
     }
 }
