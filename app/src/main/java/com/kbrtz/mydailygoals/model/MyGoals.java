@@ -21,42 +21,82 @@ public class MyGoals extends SugarRecord<MyGoals> implements Serializable {
 
     }
 
+    /**
+     * return goal' name
+     * @return
+     */
     public String getGoalName() {
         return goalName;
     }
 
+    /**
+     * set goal' name
+     * @param goalName
+     */
     public void setGoalName(String goalName) {
         this.goalName = goalName;
     }
 
+    /**
+     * return goal's description
+     * @return
+     */
     public String getGoalDescription() {
         return goalDescription;
     }
 
+    /**
+     * set goal's description
+     * @param goalDescription
+     */
     public void setGoalDescription(String goalDescription) {
         this.goalDescription = goalDescription;
     }
 
+    /**
+     * return goal's value. how many points the goal is worth
+     * @return
+     */
     public int getGoalValue() {
         return goalValue;
     }
 
+    /**
+     * set goal's value. how many points the goal is worth
+     * @param goalValue
+     */
     public void setGoalValue(int goalValue) {
         this.goalValue = goalValue;
     }
 
+    /**
+     * return goal's current status
+     * @return
+     */
     public int getGoalStatus() {
         return goalStatus;
     }
 
+    /**
+     * set goal's status
+     * @param goalStatus
+     */
     public void setGoalStatus(int goalStatus) {
         this.goalStatus = goalStatus;
     }
 
+    /**
+     * return goal's type
+     * @return
+     */
     public int getGoalType() {
         return goalType;
     }
 
+    /**
+     * set goal's type
+     * @param goalType
+     */
     public void setGoalType(int goalType) {
         this.goalType = goalType;
     }

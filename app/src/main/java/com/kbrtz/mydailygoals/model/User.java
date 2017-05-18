@@ -21,6 +21,15 @@ public class User extends SugarRecord<User> implements Serializable {
     private String picture;
     private int points;
 
+
+    /**
+     * User constructor
+     * @param name
+     * @param lastName
+     * @param email
+     * @param picture
+     * @param points
+     */
     public User(String name, String lastName, String email, String picture, int points) {
         this.name = name;
         this.lastName = lastName;

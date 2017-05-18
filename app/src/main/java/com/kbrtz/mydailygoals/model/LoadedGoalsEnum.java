@@ -4,6 +4,7 @@ import com.kbrtz.mydailygoals.R;
 import com.kbrtz.mydailygoals.constants.Constants;
 
 /**
+ * Holds the pre-loaded goals with its respective informations
  * Created by kamilabrito on 5/14/17.
  */
 
