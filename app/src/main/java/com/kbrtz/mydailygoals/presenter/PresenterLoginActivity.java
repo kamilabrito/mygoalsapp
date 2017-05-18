@@ -45,8 +45,8 @@ public class PresenterLoginActivity implements InterfaceLoginActivity {
     }
 
     @Override
-    public void openMainActivity(User user) {
-        view.openMainActivity(user);
+    public void openMainActivity() {
+        view.openMainActivity();
     }
 
     @Override
@@ -72,11 +72,5 @@ public class PresenterLoginActivity implements InterfaceLoginActivity {
     public void loadDataFirstBoot(Context context) {
         goalsDAO.createGoals(context);
     }
-
-    @Override
-    public User getCurrentUser() {
-        return userDAO.getCurrentUser();
-    }
-
 
 }

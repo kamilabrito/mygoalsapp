@@ -54,15 +54,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         presenter = new PresenterMainActivity(this);
-        currentUser = new User();
         goalsListAdapter = new GoalsRecyclerAdapter(this);
         addMyGoalBtn.setOnClickListener(this);
         setSupportActionBar(toolbar);
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            currentUser =  (User) intent.getSerializableExtra(ActivityLogin.MAIN_ACTIVITY);
-        }
+        currentUser = new User();
+        currentUser = presenter.getCurrentUser();
 
         goalsListAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override

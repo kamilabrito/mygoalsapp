@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyDailyGoals</string>
+    <string name="app_name">My Daily\n Goals</string>
     <string name="facebook_app_id">236926540121553</string>
     <string name="fb_login_protocol_scheme">fb236926540121553</string>
     <string name="action_edit">edit_mode</string>
@@ -52,6 +52,9 @@
 
     //general text
     <string name="points">Points</string>
+    <string name="app_description">My daily goals helps you
+        manage your personal goals creating a fun experience for you
+        to win points when completing them.</string>
 
 
 

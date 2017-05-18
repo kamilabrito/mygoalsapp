@@ -40,7 +40,6 @@ public class ActivityLogin extends AppCompatActivity {
     LoginButton loginButton;
     CallbackManager callbackManager;
     private PresenterLoginActivity presenter;
-    public static final String MAIN_ACTIVITY = "MAIN_ACTIVITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +49,8 @@ public class ActivityLogin extends AppCompatActivity {
 
         presenter = new PresenterLoginActivity(this);
 
-        if (presenter.isFirstBoot(this)) {
-            presenter.loadDataFirstBoot(this);
-        } else {
-            presenter.openMainActivity(presenter.getCurrentUser());
+        if (!presenter.isFirstBoot(this)) {
+            presenter.openMainActivity();
         }
 
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -124,16 +121,17 @@ public class ActivityLogin extends AppCompatActivity {
             if (object.has(Constants.EMAIL))
                 bundle.putString(Constants.EMAIL, object.getString(Constants.EMAIL));
 
-            presenter.openMainActivity(presenter.createUser(bundle));
+            presenter.createUser(bundle);
+            presenter.loadDataFirstBoot(this);
+            presenter.openMainActivity();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
     }
 
-    public void openMainActivity(User user) {
+    public void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(MAIN_ACTIVITY, user);
         startActivity(intent);
         finish();
     }

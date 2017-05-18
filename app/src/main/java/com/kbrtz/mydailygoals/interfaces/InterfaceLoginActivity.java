@@ -13,11 +13,9 @@ public interface InterfaceLoginActivity {
 
     User createUser(Bundle userInfo);
 
-    void openMainActivity(User user);
+    void openMainActivity();
 
     boolean isFirstBoot(Context context);
 
     void loadDataFirstBoot(Context context);
-
-    User getCurrentUser();
 }
