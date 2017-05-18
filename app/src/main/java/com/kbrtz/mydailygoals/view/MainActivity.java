@@ -170,14 +170,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (id == R.id.nav_completed_goals) {
             //open completed goals list
-        } else if (id == R.id.nav_logout) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
